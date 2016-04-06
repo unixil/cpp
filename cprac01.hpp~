@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+class matrixtest
+{
+public:
+  matrixtest(int dim1);
+  matrixtest(int dim1, int dim2);
+  matrixtest();
+
+  shuchu();
+
+};
+
+matrixtest::matrixtest(int dim1)
+{
+cout << dim1 <<endl;
+}
+
+matrixtest::matrixtest(int dim1,int dim2)
+{
+cout << dim1 << dim2 <<endl;
+}
+
+matrixtest::matrixtest()
+{
+cout<< "empty"<<endl;
+}
+
+matrixtest::shuchu()
+{
+cout<< "shuchu" <<endl;
+}

@@ -1,0 +1,34 @@
+#include <vector>
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int vsplit(float* start,float* end)
+{
+  if (((end-start)/sizeof(float))==1) return 0;
+  int len=(end-start)/sizeof(float);
+  cout<<len<<"1st"<<endl;
+  cout<<"begin addr is "<<start<<endl;
+  cout<<"end addr is "<<end<<endl;
+  float* midAdd=start+sizeof(float)*len/2;
+  float* midAdd1=midAdd+1;
+  cout<<(midAdd-start)/sizeof(float)<<"2nd"<<endl;
+  cout<<(end-midAdd-1)/sizeof(float)<<"3rd"<<endl;
+  vsplit(start,midAdd);
+  vsplit(midAdd1,end);
+
+}
+
+int main()
+{
+  int n=100;
+  vector<float> vtest(n);
+  for(int i=0;i<n;++i)
+    {
+      vtest[i]=i+0.5;
+    }
+
+  vsplit(&vtest[0],&vtest[n-1]);
+  return 0;
+}
